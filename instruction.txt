@@ -1,0 +1,25 @@
+#checking installation
+
+ollama list
+ollama ps
+
+ollama run qwen2.5-coder:7b
+
+/set parameter num_ctx 8192
+.........................................
+
+for comments if automation doesn't work out.
+
+### >>> YOUR CODE HERE <<< ###
+### ========================== ###
+
+.........................................
+
+
+CLI installation command 
+
+winget install Ollama.Ollama
+
+ollama --version
+
+ollama pull qwen2.5-coder:7b
