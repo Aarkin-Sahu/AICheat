@@ -23,3 +23,9 @@ winget install Ollama.Ollama
 ollama --version
 
 ollama pull qwen2.5-coder:7b
+
+python check.py file.ipynb --only cells	skips parts 1 and 2 and explains only your cells
+python check.py file.ipynb --only problem workflow	skips the cell deep dives
+python check.py file.ipynb --cells 5	deep dive on Cell 5 only
+python check.py file.ipynb --model qwen2.5-coder:3b	faster, with weaker explanations
+python check.py file.ipynb --no-save	prints only, no text file
