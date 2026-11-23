@@ -16,16 +16,40 @@ for comments if automation doesn't work out.
 .........................................
 
 
-CLI installation command 
+CLI installation command from internet
 
 winget install Ollama.Ollama
 
 ollama --version
 
 ollama pull qwen2.5-coder:7b
-
+................................................................................................
 python check.py file.ipynb --only cells	skips parts 1 and 2 and explains only your cells
 python check.py file.ipynb --only problem workflow	skips the cell deep dives
 python check.py file.ipynb --cells 5	deep dive on Cell 5 only
 python check.py file.ipynb --model qwen2.5-coder:3b	faster, with weaker explanations
 python check.py file.ipynb --no-save	prints only, no text file
+
+....................................................................................................
+
+cell 4 exploration vs exploitability epsilon code
+
+ ### >>> YOUR CODE HERE <<< ###
+        if np.random.rand() < self.epsilon:
+            action = np.random.randint(0,4)
+        else:
+            action = np.argmax(self.q_table[state])
+        return action
+        ### ========================== ###
+
+.......................................................................................................
+cell 5 q updation code
+
+ ### >>> YOUR CODE HERE <<< ###
+    q_max_next_state = np.max(self.q_table[next_state])
+    if done:
+        target = reward
+    else:
+        target = reward + self.gamma * q_max_next_state
+    self.q_table[state, action] += self.alpha * (target - self.q_table[state, action])
+    ### ========================== ###
